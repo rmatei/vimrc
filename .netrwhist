@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/rob/Documents/Ultimate Peepcode Screencasts January 2011/peepcode-046-vim-i-mov/peepcode-vim-code/tutorial-apache-files'

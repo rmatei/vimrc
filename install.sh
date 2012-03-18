@@ -1,2 +1,2 @@
 mv ~/vimrc ~/.vim
-ln -nfs ~/.vim/vimrc ~/,vimrc
+ln -nfs ~/.vim/vimrc ~/.vimrc
