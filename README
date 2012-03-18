@@ -1,0 +1,6 @@
+@rmatei's vim configs
+
+Installation:
+cd ~
+git clone git@github.com:rmatei/vimrc.git
+~/vimrc/install.sh
