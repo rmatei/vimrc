@@ -1,5 +1,17 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
+" Source Quora configs
+so $ANS_ROOT/etc/vim/vimrc
+
+" Ignore bad files
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
+
+" Toggle search highlighting on and off by doing ,/
+nmap <silent> <leader>/ :set hlsearch!<CR>
+
+" "Allow w!! if forgot to sudo
+cmap w!! w !sudo tee % >/dev/null
+
+
+" From peepcode screencast
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -49,8 +61,12 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-let g:zenburn_high_Contrast=1
-colorscheme zenburn
+" Color scheme settings
+set t_Co=256                            " screen / tmux compatibility
+let g:zenburn_high_Contrast=1           " higher contrast
+colorscheme zenburn                     " color scheme
+hi search ctermbg=223 ctermfg=238       " search highlighting
+hi incsearch ctermbg=216 ctermfg=242
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -80,5 +96,4 @@ map <leader>tm :tabmove
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
 
