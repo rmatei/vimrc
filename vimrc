@@ -5,10 +5,15 @@ so $ANS_ROOT/etc/vim/vimrc
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
 
 " Toggle search highlighting on and off by doing ,/
-nmap <silent> <leader>/ :set hlsearch!<CR>
+nmap <silent> <leader>/ :let @/=""<CR>
+
+nnoremap <silent> <leader>w :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
 
 " "Allow w!! if forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
+
+" Fix key bindings
+map <Esc>[B <Down>
 
 
 " From peepcode screencast
@@ -67,6 +72,8 @@ let g:zenburn_high_Contrast=1           " higher contrast
 colorscheme zenburn                     " color scheme
 hi search ctermbg=223 ctermfg=238       " search highlighting
 hi incsearch ctermbg=216 ctermfg=242
+hi CursorLine   ctermbg=black guibg=black
+set cursorline!
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
