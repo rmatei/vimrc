@@ -1,11 +1,16 @@
 " Source Quora configs
-so $ANS_ROOT/etc/vim/vimrc
+
 
 " Ignore bad files
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
 
 " Toggle search highlighting on and off by doing ,/
 nmap <silent> <leader>/ :let @/=""<CR>
+
+" Toggle commenting via \cc
+"[count]<leader>c |NERDComToggleComment|
+"nmap <leader>c |NERDComToggleComment|
+nnoremap <leader>cc :call NERDComment(0,"toggle")<C-m>
 
 nnoremap <silent> <leader>w :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
 
@@ -58,9 +63,9 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
-"set tabstop=2                    " Global tab width.
-"set shiftwidth=2                 " And again, related.
-"set expandtab                    " Use spaces instead of tabs
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -103,4 +108,3 @@ map <leader>tm :tabmove
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
