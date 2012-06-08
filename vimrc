@@ -1,5 +1,5 @@
 " Source Quora configs
-
+so $ANS_ROOT/etc/vim/vimrc
 
 " Ignore bad files
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
@@ -19,6 +19,24 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Fix key bindings
 map <Esc>[B <Down>
+
+" Disable arrow keys
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" Less syntax highlighting
+au BufNewFile,BufRead *.less set filetype=less
+
+" Reload on buffer switching and static cursor
+au BufWinEnter * checktime
+au WinEnter * checktime
+au CursorHold * checktime
 
 
 " From peepcode screencast
